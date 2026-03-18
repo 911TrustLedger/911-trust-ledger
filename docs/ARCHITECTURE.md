@@ -236,6 +236,39 @@ represent meaningful contribution opportunities:
 - [ ] Identity provider registration — scope and governance
       of IdP onboarding
 
+## Proof model — write vs. query layer
+
+911TL uses a two-layer proof model:
+
+**Write layer — CHE event model**
+The ledger stores CHE events as defined in the NENA i3
+standard. Events are operationally faithful records of
+what happened — state by state, event by event — mapped
+directly to how CHE systems already generate and emit
+events. This minimizes vendor integration burden and
+maximizes legal and compliance defensibility.
+
+**Query layer — semantic proof types**
+Typed proof assertions (call.ingress, caller.identity,
+location.asserted, routing.decision) are derived at
+query time from CHE events — not written as separate
+ledger entries. The query layer maps semantic questions
+to the relevant CHE event fields.
+
+This means:
+- The ledger stores operational reality
+- The query layer extracts analytical meaning
+- AI systems and outcome measurement tools consume
+  typed assertions without requiring parallel ledger writes
+- New semantic proof types can be defined without
+  changing the underlying ledger schema
+
+**Design principle:**
+Write what happened. Query what it means.
+
+The query abstraction layer is a primary technical
+contribution opportunity for the founding engineering team.
+
 ---
 
 ## What this is not
