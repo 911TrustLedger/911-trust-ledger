@@ -2,16 +2,32 @@
 
 ## Overview
 
-911TL records 911 events as cryptographic proofs — not raw data.
-No personal information, no call audio, no sensitive content ever
-touches the ledger. Only cryptographic fingerprints and essential
-metadata are committed on-chain.
+911TL uses a two-layer proof model.
 
-Proof types define the schema for each category of event that
-911TL records. They are the vocabulary of the ledger.
+**Write layer:** The ledger stores CHE events — operationally
+faithful, NENA i3-aligned records of what happened on a call,
+state by state. No personal information, no call audio, no
+sensitive content ever touches the ledger. Only cryptographic
+fingerprints and essential metadata are committed on-chain.
 
-Proof types are governed by the 911 Trust Ledger Foundation.
-Changes to proof type definitions require Foundation review.
+**Query layer:** Typed proof assertions are derived from CHE
+events at query time — not written as separate ledger entries.
+When an AI system or analytics platform asks "show me all
+location assertions for this call," the query layer maps that
+semantic question to the relevant CHE event fields.
+
+This architecture gives 911TL the operational fidelity of
+the CHE event model and the analytical power of typed
+assertions — without requiring parallel ledger writes for
+every event.
+
+**Write what happened. Query what it means.**
+
+Proof types in this document serve two purposes:
+1. CHE event types — the write schema
+2. Semantic proof types — the query vocabulary
+
+Both are governed by the 911 Trust Ledger Foundation.
 
 ---
 
