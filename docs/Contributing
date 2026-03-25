@@ -1,0 +1,111 @@
+# Contributing to 911 Trust Ledger
+
+Thank you for your interest in contributing to the 911 Trust Ledger Foundation. 911TL is an open, permissioned protocol — open in governance, open in specification, and open to the public safety community that depends on it.
+
+This document describes how contributions are made, reviewed, and accepted across all repositories in this organization.
+
+---
+
+## What We're Building
+
+911TL is trust infrastructure for America's 911 ecosystem — a neutral, community-governed protocol layer that records cryptographic proofs of key events across the NG911 workflow. We are in the founding cohort stage. The protocol specification, reference implementations, and governance tooling are all in active development.
+
+Contributions at this stage have outsized impact. The decisions made now — proof type definitions, normalization schemas, adapter interfaces — will shape the standard for years.
+
+---
+
+## Ways to Contribute
+
+### Protocol Specification & Proof Types
+
+The 911TL proof type registry is the core of the protocol — it defines what events are recorded, how they're structured, and what fields are required. Contributions here include:
+
+- Proposing new proof types (e.g., new ESInet event categories)
+- Suggesting schema changes to existing proof types
+- Identifying gaps between 911TL proof types and NENA i3 event taxonomy
+- Reviewing and commenting on open specification drafts
+
+**How:** Open an issue using the `proof-type-proposal` template. Include the event type, the i3 source event (if applicable), proposed fields, and rationale. The TAC reviews all proof type proposals before they enter the registry.
+
+### Reference Adapter & Integration Code
+
+The 911TL reference adapter connects to existing NENA i3 log streams as a passive, read-only subscriber. It is the primary integration surface for NG911 vendors and ESInet operators.
+
+Contributions here include:
+
+- Bug fixes and conformance corrections
+- Vendor-specific adapter implementations
+- Improvements to the conformance test suite
+- Documentation and integration guides for specific platforms
+
+**How:** Fork the relevant repo, open a pull request against `main`, and complete the PR template. All adapter contributions must include passing conformance tests. Changes to the reference adapter interface require TAC review.
+
+### Governance & Standards Feedback
+
+911TL governance documents — the protocol specification, normalization schema, interoperability profiles, and data commons framework — are living documents during the founding period. Community input shapes them.
+
+Contributions here include:
+
+- Comments on open specification drafts
+- Proposals for governance policy changes
+- Feedback on the normalization event schema
+- Input on the federated query and data commons framework
+
+**How:** Open an issue tagged `governance-feedback`. Substantive proposals (anything that would require a TAC vote) should include a brief summary of the change, the rationale, and any relevant NENA or EIDO standards context.
+
+### Bug Reports & Issues
+
+If you've found something broken, unclear, or missing — please tell us.
+
+**How:** Open an issue in the relevant repository. Include as much context as you can: what you expected, what happened, and any relevant environment details. Security vulnerabilities should be reported privately to [hello@911trustledger.org](mailto:hello@911trustledger.org) — do not open a public issue for security findings.
+
+---
+
+## What We're Not Accepting Yet
+
+We are in the founding cohort stage. The following are not open for contribution at this time:
+
+- **Node software** — the distributed ledger core is not yet public
+- **Data commons query layer** — under active design
+- **Governance tooling** — TAC tooling and registry management interfaces are internal during the founding period
+
+This will change. Watch this repo for updates.
+
+---
+
+## Review & Decision Process
+
+| Contribution Type | Reviewer | Decision Authority |
+|---|---|---|
+| Bug fixes (code) | Maintainers | Maintainer approval |
+| Adapter implementations | Maintainers + TAC | Maintainer approval |
+| Proof type proposals | TAC | TAC vote |
+| Schema changes | TAC | TAC vote |
+| Governance policy changes | TAC + Foundation Board | TAC vote |
+| Reference adapter interface changes | TAC | TAC vote |
+
+During the founding period, the Technical Advisory Committee (TAC) is composed of Foundation staff and founding member representatives. TAC membership and voting procedures are defined in the Foundation governance documents.
+
+---
+
+## Contributor License Agreement
+
+All contributions to 911TL repositories are made under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). By submitting a pull request or opening an issue with a substantive proposal, you confirm that you have the right to contribute the content and that your contribution may be incorporated into the 911TL protocol under Apache 2.0 terms.
+
+Founding members who co-author protocol specifications retain attribution as defined in their Founding Member Agreement. No contributor holds exclusive rights to any Foundation standard.
+
+---
+
+## Code of Conduct
+
+911TL repositories are professional spaces. Contributors are expected to engage constructively and in good faith. Public safety infrastructure depends on the trust of the communities it serves — that standard applies here too.
+
+Harassment, bad-faith proposals, and off-topic content will be removed. Repeat violations result in removal from the project.
+
+---
+
+## Questions
+
+Open an issue tagged `question`, or reach us directly at [hello@911trustledger.org](mailto:hello@911trustledger.org).
+
+Learn more at [911trustledger.org](https://www.911trustledger.org) · [Whitepaper](https://www.911trustledger.org/documents) · [Founding Partner Brief](https://www.911trustledger.org/documents)
